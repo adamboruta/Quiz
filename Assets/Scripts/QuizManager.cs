@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI questionNumber;
 
+    [SerializeField]
+    GameObject adPanel;
+
     private void Start()
     {
         generateQuestion();
@@ -30,10 +34,15 @@ public class QuizManager : MonoBehaviour
         QnA.RemoveAt(currentQuestion);
         //greatScript.show(); //ROZWIAZAC
         generateQuestion();
-              
+    }
+
+    public void wrong()
+    {
+        adPanel.SetActive(true);
     }
     void generateQuestion()
     {
+        Debug.Log(QnA.Count);
         currentQuestion = Random.Range(0, QnA.Count);
         questionText.text = QnA[currentQuestion].Question;
         setAnswer();
@@ -58,5 +67,10 @@ public class QuizManager : MonoBehaviour
     private void Update()
     {
         questionNumber.text = qCount.ToString();
+
+        if(QnA.Count == 0) //wygrana
+        {
+            SceneManager.LoadScene("Koniec");
+        }
     }
 }

@@ -9,6 +9,7 @@ public class MenuScript : MonoBehaviour
     [SerializeField] GameObject menuPanel;
     [SerializeField] GameObject levelsPanel;
     [SerializeField] GameObject mainPanel;
+    [SerializeField] GameObject credits;
 
     public void SelectLevel()
     {
@@ -21,6 +22,21 @@ public class MenuScript : MonoBehaviour
     {
         menuPanel.SetActive(true);
         levelsPanel.SetActive(false);
+    }
+
+    public void ToggleCredits(bool tog)
+    {
+        if(tog == true)
+        {
+            credits.SetActive(true);
+        } else
+        {
+            credits.SetActive(false);
+        }
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
     public void Klasa1()
