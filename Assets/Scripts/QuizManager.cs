@@ -14,6 +14,9 @@ public class QuizManager : MonoBehaviour
     private int qCount;
 
     public Text questionText;
+    public string questionType;
+
+    [SerializeField] SpriteChanger sprchng;
 
     public GameObject questionCount;
     public greatScript greatScript;
@@ -26,6 +29,7 @@ public class QuizManager : MonoBehaviour
 
     private void Start()
     {
+        
         generateQuestion();
     }
 
@@ -48,6 +52,8 @@ public class QuizManager : MonoBehaviour
         setAnswer();
         qCount++;
         questionCount.GetComponent<Animator>().SetTrigger("show");
+        setQuestionIcon();
+        
     }
 
     void setAnswer()
@@ -61,6 +67,36 @@ public class QuizManager : MonoBehaviour
             {
                 options[i].GetComponent<AnswerScript>().isCorrect = true;
             }
+        }
+    }
+
+    void setQuestionIcon()
+    {
+        questionType = QnA[currentQuestion].questionType.ToString();
+        
+        switch (questionType)
+        {
+            case "geo":
+                sprchng.GetComponent<Image>().overrideSprite = sprchng.geoIcon;
+                break;
+            case "maths":
+                sprchng.GetComponent<Image>().overrideSprite = sprchng.mathsIcon;
+                break;
+            case "general":
+                sprchng.GetComponent<Image>().overrideSprite = sprchng.generalIcon;
+                break;
+            case "books":
+                sprchng.GetComponent<Image>().overrideSprite = sprchng.booksIcon;
+                break;
+            case "bio":
+                sprchng.GetComponent<Image>().overrideSprite = sprchng.bioIcon;
+                break;
+            case "hist":
+                sprchng.GetComponent<Image>().overrideSprite = sprchng.historyIcon;
+                break;
+            case "phys":
+                sprchng.GetComponent<Image>().overrideSprite = sprchng.physicsIcon;
+                break;
         }
     }
 

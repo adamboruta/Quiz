@@ -6,6 +6,13 @@ public class soundManagerScript : MonoBehaviour
 {
     [SerializeField] AudioSource positiveSound;
 
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+
     public void PlayPositiveSound()
     {
         positiveSound.Play();
