@@ -129,7 +129,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8205983933802467436}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bb6767b5d77b24479f4855380ac0c6c, type: 3}
   m_Name: 
@@ -767,6 +767,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8205983933731092294, guid: 3681f7c4d63db5849bbe92575aa1d736, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8205983933731092296, guid: 3681f7c4d63db5849bbe92575aa1d736, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -778,6 +782,10 @@ PrefabInstance:
     - target: {fileID: 8205983933731092297, guid: 3681f7c4d63db5849bbe92575aa1d736, type: 3}
       propertyPath: m_SizeDelta.y
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205983933731092298, guid: 3681f7c4d63db5849bbe92575aa1d736, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8205983933851322032, guid: 3681f7c4d63db5849bbe92575aa1d736, type: 3}
       propertyPath: m_Pivot.x
